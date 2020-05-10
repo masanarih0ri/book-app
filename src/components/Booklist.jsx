@@ -15,7 +15,13 @@ const Booklist = (props) => {
   });
   return (
     <div>
-      <p>{JSON.stringify(bookData)}</p>
+      {bookData === null ? (
+        <p>now loading...</p>
+      ) : (
+        bookData.data.items.map((data, index) => {
+          return <li key={index}>{data.volumeInfo.title}</li>;
+        })
+      )}
     </div>
   );
 };
