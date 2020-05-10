@@ -1,13 +1,15 @@
 import React from 'react';
 import Booklist from './components/Booklist';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
-
-const getBookDataFromAPI = (keyword) => {
-  return `${keyword} books`;
-};
+import axios from 'axios';
 
 function App() {
   const languages = ['React', 'Vue', 'Angular'];
+  const getBookDataFromAPI = async (keyword) => {
+    const requestUrl = 'https://www.googleapis.com/books/v1/volumes?q=intitle:';
+    const result = await axios.get(`${requestUrl}${keyword}`);
+    return result;
+  };
   return (
     // BrowserRouterが必要
     // exact path="/"は完全一致しているものだけを指定する。
