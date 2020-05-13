@@ -16,7 +16,14 @@ const Stocklist = (props) => {
         <p>now loading...</p>
       ) : (
         stockData.data.map((data, index) => {
-          return <li key={index}>{data.stockName}</li>;
+          return (
+            <ul>
+              <li key={index}>
+                <span>{data.ticker}</span>
+                <span>{data.currentStockPrice}</span>
+              </li>
+            </ul>
+          );
         })
       )}
     </div>

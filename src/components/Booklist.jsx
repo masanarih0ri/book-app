@@ -19,7 +19,19 @@ const Booklist = (props) => {
         <p>now loading...</p>
       ) : (
         bookData.data.items.map((data, index) => {
-          return <li key={index}>{data.volumeInfo.title}</li>;
+          if (data.volumeInfo.imageLinks) {
+            return (
+              <li key={index}>
+                <div>{data.volumeInfo.title}</div>
+                <div>{data.volumeInfo.imageLinks.thumbnail}</div>
+              </li>
+            );
+          }
+          return (
+            <li key={index}>
+              <div>{data.volumeInfo.title}</div>
+            </li>
+          );
         })
       )}
     </div>
