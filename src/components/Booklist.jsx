@@ -23,7 +23,10 @@ const Booklist = (props) => {
             return (
               <li key={index}>
                 <div>{data.volumeInfo.title}</div>
-                <div>{data.volumeInfo.imageLinks.thumbnail}</div>
+                <img
+                  src={data.volumeInfo.imageLinks.thumbnail}
+                  alt={data.volumeInfo.title}
+                />
               </li>
             );
           }
