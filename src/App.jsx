@@ -14,8 +14,6 @@ function App() {
     return result;
   };
   return (
-    // BrowserRouterが必要
-    // exact path="/"は完全一致しているものだけを指定する。
     <BrowserRouter>
       <div className="App">
         <div className="header-content">
@@ -36,7 +34,6 @@ function App() {
             </ul>
           </nav>
         </div>
-        {/* ここのlangage, getDataは子コンポーネントにデータなどを渡す際の名前 */}
         <Route
           exact
           path="/"
