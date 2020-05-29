@@ -3,6 +3,8 @@ import Booklist from './components/Booklist';
 import Stocklist from './components/Stocklist';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import axios from 'axios';
+import Logo from './images/logo.png';
+import './css/App.css';
 
 function App() {
   const languages = ['React', 'Vue', 'Angular'];
@@ -22,21 +24,27 @@ function App() {
     // exact path="/"は完全一致しているものだけを指定する。
     <BrowserRouter>
       <div className="App">
-        <h1>book app</h1>
-        <ul>
-          <li>
-            <Link to="/">React</Link>
-          </li>
-          <li>
-            <Link to="/vue">Vue</Link>
-          </li>
-          <li>
-            <Link to="/angular">Angular</Link>
-          </li>
-          <li>
-            <Link to="/stocks">Stocks</Link>
-          </li>
-        </ul>
+        <div className="header-content">
+          <div className="header-logo">
+            <img src={Logo} alt="" />
+          </div>
+          <nav className="header-nav">
+            <ul className="header-nav-list">
+              <li className="header-nav-item">
+                <Link to="/">React</Link>
+              </li>
+              <li className="header-nav-item">
+                <Link to="/vue">Vue</Link>
+              </li>
+              <li className="header-nav-item">
+                <Link to="/angular">Angular</Link>
+              </li>
+              <li className="header-nav-item">
+                <Link to="/stocks">Stocks</Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
         {/* ここのlangage, getDataは子コンポーネントにデータなどを渡す際の名前 */}
         <Route
           exact

@@ -1,0 +1,30 @@
+.App {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  font-family: 'Google Sans Text Beta', Roboto, Arial, sans-serif;
+}
+
+.header-content {
+  display: flex;
+}
+
+.header-logo img {
+  vertical-align: middle;
+  height: 26px;
+}
+
+.header-nav {
+  flex: 1;
+}
+
+.header-nav-list {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.header-nav-item {
+  padding: 0 12px;
+}
