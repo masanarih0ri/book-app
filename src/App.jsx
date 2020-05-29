@@ -13,12 +13,6 @@ function App() {
     const result = await axios.get(`${requestUrl}${keyword}`);
     return result;
   };
-  const getStocksDataFromStein = async () => {
-    const stockRequestUrl =
-      'https://api.steinhq.com/v1/storages/5e2ff4245a823204986f3ae8/stocksData';
-    const srockDataResult = await axios.get(stockRequestUrl);
-    return srockDataResult;
-  };
   return (
     // BrowserRouterが必要
     // exact path="/"は完全一致しているものだけを指定する。
@@ -38,9 +32,6 @@ function App() {
               </li>
               <li className="header-nav-item">
                 <Link to="/angular">Angular</Link>
-              </li>
-              <li className="header-nav-item">
-                <Link to="/stocks">Stocks</Link>
               </li>
             </ul>
           </nav>
@@ -72,12 +63,6 @@ function App() {
               language={languages[2]}
               getData={(keyword) => getBookDataFromAPI(keyword)}
             />
-          )}
-        />
-        <Route
-          path="/stocks"
-          render={(props) => (
-            <Stocklist getStockData={() => getStocksDataFromStein()} />
           )}
         />
       </div>
